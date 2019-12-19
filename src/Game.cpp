@@ -6,8 +6,6 @@ Game::~Game() {
   TTF_CloseFont(font21);
   TTF_Quit();
 
-  SDL_DestroyTexture(btnTextures[BtnOptions]);
-  SDL_DestroyTexture(btnTextures[BtnQuit]);
   SDL_DestroyTexture(btnTextures[BtnYes]);
   SDL_DestroyTexture(btnTextures[BtnNo]);
 
@@ -50,20 +48,8 @@ Game::Game(const char *title) {
   bgTexture = SDL_CreateTextureFromSurface(renderer, bgSurface);
   SDL_FreeSurface(bgSurface);
 
-  btnOptionsSurface = SDL_LoadBMP("res/img/btn_options.bmp");
-  btnQuitSurface = SDL_LoadBMP("res/img/btn_quit.bmp");
   btnYesSurface = SDL_LoadBMP("res/img/btn_yes.bmp");
   btnNoSurface = SDL_LoadBMP("res/img/btn_no.bmp");
-
-  if (btnOptionsSurface == nullptr) {
-    printf("Unable to load image %s! SDL Error: %s\n", "res/img/btn_options.bmp", SDL_GetError());
-    exit(EXIT_FAILURE);
-  }
-
-  if (btnQuitSurface == nullptr) {
-    printf("Unable to load image %s! SDL Error: %s\n", "res/img/btn_quit.bmp", SDL_GetError());
-    exit(EXIT_FAILURE);
-  }
 
   if (btnYesSurface == nullptr) {
     printf("Unable to load image %s! SDL Error: %s\n", "res/img/btn_yes.bmp", SDL_GetError());
@@ -75,13 +61,9 @@ Game::Game(const char *title) {
     exit(EXIT_FAILURE);
   }
 
-  btnTextures[BtnOptions] = SDL_CreateTextureFromSurface(renderer, btnOptionsSurface);
-  btnTextures[BtnQuit] = SDL_CreateTextureFromSurface(renderer, btnQuitSurface);
   btnTextures[BtnYes] = SDL_CreateTextureFromSurface(renderer, btnYesSurface);
   btnTextures[BtnNo] = SDL_CreateTextureFromSurface(renderer, btnNoSurface);
 
-  SDL_FreeSurface(btnOptionsSurface);
-  SDL_FreeSurface(btnQuitSurface);
   SDL_FreeSurface(btnYesSurface);
   SDL_FreeSurface(btnNoSurface);
 
