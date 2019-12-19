@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <sstream>
+#include <thread>
 
 #include <SDL.h>
 #include <SDL2_gfxPrimitives.h>

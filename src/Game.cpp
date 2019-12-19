@@ -1,4 +1,3 @@
-#include <thread>
 #include "Game.h"
 
 Game::~Game() {
