@@ -24,7 +24,7 @@
 #define FONT "res/font/WickedGrit.ttf"
 
 enum Buttons {
-  BtnOptions, BtnQuit, BtnYes, BtnNo,
+  BtnYes, BtnNo,
   BtnCount
 };
 
@@ -39,7 +39,9 @@ enum Menus {
 class Game {
 public:
   ~Game();
+
   explicit Game(const char *title);
+
   bool isRunning();
 
   void handleEvents();
@@ -99,11 +101,9 @@ private:
 
   int turn{};
 
-  SDL_Texture *btnTextures[BtnCount];
-  SDL_Rect btnRects[BtnCount];
+  SDL_Texture *btnTextures[BtnCount]{};
+  SDL_Rect btnRects[BtnCount]{};
 
-  SDL_Surface *btnOptionsSurface;
-  SDL_Surface *btnQuitSurface;
   SDL_Surface *btnYesSurface;
   SDL_Surface *btnNoSurface;
 

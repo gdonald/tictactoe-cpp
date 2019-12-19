@@ -299,7 +299,7 @@ void Game::drawGameOverMenu() {
 
   if (winner == X) {
     result << "X Wins!";
-  } else if(winner == O) {
+  } else if (winner == O) {
     result << "O Wins!";
   } else {
     result << "Tie";
@@ -362,7 +362,7 @@ void Game::drawXOs() {
     for (Sint16 c = 0; c < SIZE; c++) {
       int xo = board->getXO(c, r);
       if (xo == X) drawX(c, r);
-      else if(xo == O) drawO(c, r);
+      else if (xo == O) drawO(c, r);
     }
   }
 }

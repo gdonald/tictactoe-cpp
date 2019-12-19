@@ -4,6 +4,7 @@
 class Move {
 public:
   Move(int col, int row);
+
   explicit Move(Move *move);
 
   int col{};
