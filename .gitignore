@@ -1,0 +1,9 @@
+.idea
+cmake-build-debug
+tictactoe
+CMakeCache.txt
+CMakeFiles
+Makefile
+cmake_install.cmake
+.DS_Store
+tictactoe.cbp
