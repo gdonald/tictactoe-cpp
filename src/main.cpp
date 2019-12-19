@@ -9,6 +9,6 @@ auto main() -> int {
     game->handleEvents();
   }
 
-  game->clean();
   delete game;
+  exit(EXIT_SUCCESS);
 }

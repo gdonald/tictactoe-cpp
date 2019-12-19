@@ -252,13 +252,6 @@ bool Game::isPlayerTurn() {
   return turn == X;
 }
 
-void Game::clean() {
-  SDL_DestroyRenderer(renderer);
-  SDL_DestroyWindow(window);
-  SDL_Quit();
-  exit(EXIT_SUCCESS);
-}
-
 void Game::render() {
   SDL_RenderClear(renderer);
   SDL_RenderCopy(renderer, bgTexture, nullptr, nullptr);
@@ -268,7 +261,6 @@ void Game::render() {
   drawMenu();
 
   SDL_RenderPresent(renderer);
-  SDL_Delay(30);
 }
 
 void Game::drawMenu() {

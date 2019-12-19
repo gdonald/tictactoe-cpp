@@ -47,8 +47,6 @@ public:
 
   void handleEvents();
 
-  void clean();
-
   void render();
 
   void drawGrid();
